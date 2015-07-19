@@ -1,0 +1,182 @@
+// Basic mission parameters
+
+author = "Szelf [S.D.S]";
+onLoadName = "Hide and Seek";
+OnLoadMission = "Hide and Seek Minigame v 0.1";
+loadScreen = "images\HideAndSeek_CO.paa";
+overviewPicture = "images\HideAndSeek_CO.paa";
+
+onLoadIntro = "";
+onLoadIntroTime = 0;
+onLoadMissionTime = 0;
+
+class Header 
+{
+	gameType = Unknown;
+	minPlayers = 1;
+	maxPlayers = 22;
+}; 
+
+// Debug
+
+enableDebugConsole = 1;
+allowFunctionsLog = 1;
+
+//  Misc
+
+disableChannels[] = {6};								// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System
+disabledAI = 1;
+aiKills = 0;
+enableItemsDropping = 0;
+joinUnassigned = 0;
+enableTeamSwitch = 0;
+saving = 0;
+
+// Respawn
+
+respawn = 1;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawnDelay = 10;
+respawnDialog = 1;
+respawnOnStart = 0;
+respawnTemplates[] = {"Seagull","f_spectator","EndMission"};
+
+//------------------------- Debriefing
+debriefing = 1;
+
+class CfgDebriefing
+{  
+	class GameOver_TimesUp
+	{
+		title = "Game over";
+		subtitle = "The time's up";
+	};
+	class GameOver_WestDead
+	{
+		title = "Game over";
+		subtitle = "All policemen are dead";
+	};
+	class GameOver_EastDead
+	{
+		title = "Game over";
+		subtitle = "All players are dead";
+	};
+	class GameOver_AllDead
+	{
+		title = "Game over";
+		subtitle = "All players and policemen are dead!";
+	};
+	class Killed
+	{
+		title = "Game over";
+		subtitle = "All players and policemen are dead";
+	};		
+};
+
+//---------------------- Show
+showGPS = 0;
+showCompass = 1;
+showMap = 0;
+showNotePad = 0;
+
+// Menu components for the Spectator Script
+#include "f\spect\config.hpp"
+
+class CfgFunctions
+{
+	#include "functions\cfgfunctions.hpp"
+	class F
+	{
+		#include "f\spect\functions.hpp"
+	};
+};
+
+class Params
+{
+	class ChoosenArena
+	{
+		title = "Arena";
+		values[] = {0,1,2,3,4,5};
+		texts[] = {"Charkia storage","Aktinarki ruins","Katalaki village", "Oreokastro village","Kavala city", "Limni swamps"};
+		default = 2;
+	};
+	class ObjectCount
+	{
+		title = "Object count";
+		values[] = {20,40,60,80,100,150,200};
+		texts[] = {"20","40","60","80","100","150","200"};
+		default = 80;
+	};
+	class PolicemanWeapon
+	{
+		title = "Policeman's weapon";
+		values[] = {0,1,2,3};
+		texts[] = {"Revolver","Pistol","Submachinegun","Rifle"};
+		default = 0;
+	};
+	class PolicemanAmmoPerPlayer
+	{
+		title = "How many shots per player";
+		values[] = {1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"1","2","3","4","5","6","7","8","9","10"};
+		default = 3;
+	};
+	class PolicemanOptics
+	{
+		title = "Policeman uses optics";
+		values[] = {1,0};
+		texts[] = {"Yes","No"};
+		default = 0;
+	};
+	class PolicemanOutOfAmmo
+	{
+		title = "Mission ends when policeman has no ammo";
+		values[] = {1,0};
+		texts[] = {"Yes","No"};
+		default = 1;
+	};
+	class TimeLimit
+	{
+		title = "Time limit";
+		values[] = {0, 300, 600, 900, 1200, 1800};
+		texts[] = {"Unlimited", "5 min", "10 min", "15 min", "20 min", "30 min"};
+		default = 900;
+	};
+    class f_param_radios
+    {
+            title = "Radio System";
+            values[] = {0,1,2,3};
+            texts[] = {"Off","ACRE","TFR","ACRE2"};
+            default = 0;
+    };
+};
+
+class CfgSounds
+{
+	sounds[] = {PointTaken,PlayerMissed};
+	class PointTaken
+	{
+		name = "PointTaken";
+		sound[] = {"sounds\register.ogg", 1, 1};
+		titles[] = {};
+	};
+	class PlayerMissed
+	{
+		name = "PlayerMissed";
+		sound[] = {"sounds\lamb.ogg", 1, 1};
+		titles[] = {};
+	};
+};
+
+class CfgRespawnTemplates
+{
+  	//Overwrite Vanilla Seagull
+    class Seagull
+    {
+        onPlayerRespawn = "";
+    };
+	// F3 Spectator Script
+	class f_Spectator
+	{
+		onPlayerRespawn = "f_fnc_CamInit";
+	};
+};
