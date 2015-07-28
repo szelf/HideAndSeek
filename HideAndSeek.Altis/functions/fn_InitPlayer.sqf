@@ -13,6 +13,7 @@ removeGoggles _unit;
 
 // hiding player
 // FIXME : how to do it in first person ?
+_unit allowDamage false;
 hideObjectGlobal _unit;
 _unit setObjectTextureGlobal [0, "#(argb,8,8,3)color(1,1,1,1)"];
 _unit setObjectTextureGlobal [1, "#(argb,8,8,3)color(1,1,1,1)"];

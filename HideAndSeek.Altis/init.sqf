@@ -12,7 +12,7 @@ hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V2_F",			5,	[0,0,0],		180,	
 hsObjectTypes = hsObjectTypes + [["Land_CampingTable_small_F",		5,	[0,0,0],		0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V1_F",			5,	[0,0,0],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_GasTank_01_blue_F",			10,	[0,0,-0.5],		0,		true]];
-hsObjectTypes = hsObjectTypes + [["Land_WoodenLog_F",				5,	[0,0,0],		0,		false]];
+hsObjectTypes = hsObjectTypes + [["Land_WoodenLog_F",				5,	[0,0,-0.05],	0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_CinderBlocks_F",			5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_FieldToilet_F",				5,	[0,0,-1.59],	180,	false]];
 hsObjectTypes = hsObjectTypes + [["Land_Portable_generator_F",		5,	[0,0,0],		90,		true]];
@@ -34,7 +34,7 @@ hsObjectTypes = hsObjectTypes + [["Land_Calvary_02_V2_F",			5,	[0,0,-0.4],		0,		
 hsObjectTypes = hsObjectTypes + [["Land_BC_Basket_F",				5,	[0,1.4,-0.25],	0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_FuelStation_Feed_F",		5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_fs_feed_F",					5,	[0,0,0],		0,		true]];
-hsObjectTypes = hsObjectTypes + [["Land_CanisterPlastic_F",			5,	[0,0,0],		0,		false]];
+hsObjectTypes = hsObjectTypes + [["Land_CanisterPlastic_F",			5,	[0,0,-0.05],	0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_PhoneBooth_01_F",			5,	[0,0,-0.1],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_PhoneBooth_02_F",			5,	[0,0,-0.1],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_GarbageBin_01_F",			5,	[0,0,-0.2],		180,	true]];
@@ -195,7 +195,6 @@ if(isServer) then
 		estimatedTimeLeft hsTimeLimit;
 	};
 	
-	// exec server game logic
 	hsGameInitializedOnServer = true;
 	publicVariable "hsGameInitializedOnServer";
 	// run script that will check end mission conditions every few seconds
@@ -210,16 +209,13 @@ if(!isDedicated) then
 
 //	diag_log format["Setting variables for player %1",player];
 	player setVariable ["wasKilled",false, true];
-	player addEventHandler ["killed", "player setVariable [""wasKilled"",true, true]; hsArena setTriggerStatements [""this"","""",""""];"];
+	player addEventHandler ["killed", "player setVariable [""wasKilled"",true, true];"];
 	// if player plays OPFOR
 	if ( side (group player) isEqualTo east ) then
 	{
 		player setObjectTextureGlobal [0, "#(argb,8,8,3)color(1,1,1,1)"];
 		player setObjectTextureGlobal [1, "#(argb,8,8,3)color(1,1,1,1)"];
 	
-		// we set trigger statements locally, so server won't fire it
-		hsArena setTriggerStatements ["this","","nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1;"];
-
 		_typeIndex			= 0;
 		_typeName			= "";
 		_typeTranslation	= [0,0,0];

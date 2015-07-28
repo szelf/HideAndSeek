@@ -3,8 +3,8 @@
 author = "Szelf [S.D.S]";
 onLoadName = "Hide and Seek";
 OnLoadMission = "Hide and Seek Minigame v 0.1";
-loadScreen = "images\HideAndSeek_CO.paa";
-overviewPicture = "images\HideAndSeek_CO.paa";
+loadScreen = "HideAndSeek_CO.paa";
+overviewPicture = "HideAndSeek_CO.paa";
 
 onLoadIntro = "";
 onLoadIntroTime = 0;

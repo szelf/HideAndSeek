@@ -441,6 +441,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena0";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -456,6 +458,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena1";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -471,6 +475,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena2";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -485,6 +491,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena3";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -501,6 +509,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena4";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -516,6 +526,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="arena5";
+			expCond="player in thisList";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
