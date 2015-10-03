@@ -18,7 +18,7 @@ while {true} do
 			// show how much time is left
 			if( _timeLeft <= 60 ) then
 			{
-				SendGlobalChat = format["Time to mission end: %1 seconds ", _timeLeft];
+				SendGlobalChat = format[ localize "STR_HS_MSG_TIME_OUT", _timeLeft];
 				publicVariable "SendGlobalChat";
 				player globalChat SendGlobalChat;
 			};

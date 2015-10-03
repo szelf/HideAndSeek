@@ -1,7 +1,6 @@
 // fn_InitPoliceman.sqf
-private["_unit","_index"];
+private["_unit"];
 _unit = _this select 0;
-_index = _this select 1;
 
 removeAllWeapons _unit;
 removeAllItems _unit;
@@ -22,8 +21,5 @@ _unit addHeadgear "H_Cap_police";
 
 _unit linkItem "ItemCompass";
 _unit linkItem "ItemRadio";
-
-// policeman index - helps to check where policeman must be placed
-_unit setVariable ["index",_index, true];
 
 true

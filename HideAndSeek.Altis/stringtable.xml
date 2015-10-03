@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="HideAndSeek mission">
+
+	<Package name="HSMissionMain">
+		<Key ID="STR_HS_MAIN_LOADNAME">
+			<Original>Hide and Seek</Original>
+			<English>Hide and Seek</English>
+			<Polish>Hide and Seek</Polish>
+		</Key>
+		<Key ID="STR_HS_MAIN_LOADMISSION">
+			<Original>Hide and Seek Minigame v 0.2</Original>
+			<English>Hide and Seek Minigame v 0.2</English>
+			<Polish>Hide and Seek - minigra v 0.2</Polish>
+		</Key>
+	</Package>
+	
+	<Package name="HSMissionParams">
+		<Key ID="STR_HS_PARAM_YES">
+			<Original>Yes</Original>
+			<English>Yes</English>
+			<Polish>Tak</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_NO">
+			<Original>No</Original>
+			<English>No</English>
+			<Polish>Nie</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_ARENA">
+			<Original>Arena</Original>
+			<English>Arena</English>
+			<Polish>Strefa gry</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_OBJECT_COUNT">
+			<Original>Object count</Original>
+			<English>Object count</English>
+			<Polish>Ilość obiektów</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_WEAPON">
+			<Original>Policeman's weapon</Original>
+			<English>Policeman's weapon</English>
+			<Polish>Broń policjanta</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_REVOLVER">
+			<Original>Revolver</Original>
+			<English>Revolver</English>
+			<Polish>Rewolwer</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_PISTOL">
+			<Original>Pistol</Original>
+			<English>Pistol</English>
+			<Polish>Pistolet</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_SUBMACHINEGUN">
+			<Original>Submachinegun</Original>
+			<English>Submachinegun</English>
+			<Polish>Pistolet maszynowy</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_RIFLE">
+			<Original>Rifle</Original>
+			<English>Rifle</English>
+			<Polish>Karabin</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_AMMO">
+			<Original>How many shots per player</Original>
+			<English>How many shots per player</English>
+			<Polish>Ile pocisków na jednego gracza</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_OPTICS">
+			<Original>Policeman uses optics</Original>
+			<English>Policeman uses optics</English>
+			<Polish>Czy policjant używa optyki</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_POLICEMAN_OUT_OF_AMMO">
+			<Original>Policeman dies when has no ammo</Original>
+			<English>Policeman dies when has no ammo</English>
+			<Polish>Czy policjant ma umrzeć gdy skończy mu się amunicja</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_TIME_LIMIT">
+			<Original>Game time limit</Original>
+			<English>Game time limit</English>
+			<Polish>Limit czasowy gry</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_TIME_UNLIMITED">
+			<Original>Unlimited</Original>
+			<English>Unlimited</English>
+			<Polish>Bez limitu czasu</Polish>
+		</Key>
+	</Package>
+	
+	<Package name="HSMissionDebriefing">
+		<Key ID="STR_HS_DEBRIEFING_GAMEOVER">
+			<Original>Game over</Original>
+			<English>Game over</English>
+			<Polish>Koniec gry</Polish>
+		</Key>
+		<Key ID="STR_HS_DEBRIEFING_TIMESUP">
+			<Original>The time's up</Original>
+			<English>The time's up</English>
+			<Polish>Upłynął czas gry</Polish>
+		</Key>
+		<Key ID="STR_HS_DEBRIEFING_WESTDEAD">
+			<Original>All policemen are dead</Original>
+			<English>All policemen are dead</English>
+			<Polish>Wszyscy policjanci zginęli</Polish>
+		</Key>
+		<Key ID="STR_HS_DEBRIEFING_EASTDEAD">
+			<Original>All players are dead</Original>
+			<English>All players are dead</English>
+			<Polish>Wszyscy gracze zginęli</Polish>
+		</Key>
+		<Key ID="STR_HS_DEBRIEFING_ALLDEAD">
+			<Original>All players and policemen are dead</Original>
+			<English>All players and policemen are dead</English>
+			<Polish>Wszyscy gracze i policjanci zginęli</Polish>
+		</Key>
+	</Package>
+	
+	<Package name="HSMissionDiary">
+		<Key ID="STR_HS_DIARY_GITHUB">
+			<Original>&lt;br /&gt;Mission is available on Github :&lt;br /&gt; https://github.com/szelf/HideAndSeek&lt;br /&gt;</Original>
+			<English>&lt;br /&gt;Mission is available on Github :&lt;br /&gt; https://github.com/szelf/HideAndSeek&lt;br /&gt;</English>
+			<Polish>&lt;br /&gt;Misja dostępna na Githubie :&lt;br /&gt; https://github.com/szelf/HideAndSeek&lt;br /&gt;</Polish>
+		</Key>
+		<Key ID="STR_HS_DIARY_TIPS_AND_TRICKS_TITLE">
+			<Original>Tips and tricks</Original>
+			<English>Tips and tricks</English>
+			<Polish>Dodatkowe uwagi do gry</Polish>
+		</Key>
+		<Key ID="STR_HS_DIARY_TIPS_AND_TRICKS">
+			<Original>&lt;br /&gt; - player may change objects he is hiding in&lt;br /&gt; - policeman should listen to all sounds and its directions&lt;br /&gt; - things you may change in MISSION PARAMETERS:&lt;br /&gt;   - game area ( there are few to choose from )&lt;br /&gt;   - policeman's weapons, optics and ammo count&lt;br /&gt;   - time limit&lt;br /&gt;   - radio system for spectators</Original>
+			<English>&lt;br /&gt; - player may change objects he is hiding in&lt;br /&gt; - policeman should listen to all sounds and its directions&lt;br /&gt; - things you may change in MISSION PARAMETERS:&lt;br /&gt;   - game area ( there are few to choose from )&lt;br /&gt;   - policeman's weapons, optics and ammo count&lt;br /&gt;   - time limit&lt;br /&gt;   - radio system for spectators</English>
+			<Polish>&lt;br /&gt; - gracz może zmieniać obiekty, w których się ukrywa&lt;br /&gt; - policjant powinien nasłuchiwać skąd dochodzą dźwięki&lt;br /&gt; - opcje, które możesz zmienić w PARAMETRACH MISJI:&lt;br /&gt;   - strefa gry ( jest kilka do wyboru )&lt;br /&gt;   - broń, optykę i ilość amunicji policjanta&lt;br /&gt;   - limit czasu&lt;br /&gt;   - system radiowy dla obserwatorów</Polish>
+		</Key>
+		<Key ID="STR_HS_DIARY_RULES_TITLE">
+			<Original>Rules of the game</Original>
+			<English>Rules of the game</English>
+			<Polish>Zasady gry</Polish>
+		</Key>
+		<Key ID="STR_HS_DIARY_RULES">
+			<Original>&lt;br /&gt;1. There are two teams : policemen (max 2) and players (max 30).&lt;br /&gt;   Players are invisible and hiding in objects.&lt;br /&gt;&lt;br /&gt;2. Policeman's goal is to kill all players. &lt;br /&gt;   Policeman dies when he runs out of ammo.&lt;br /&gt;&lt;br /&gt;3. Player's goal is to collect points by reaching place&lt;br /&gt;   marked by a stack of arrows. Each player has it's own arrows&lt;br /&gt;   and arrows are visible only to him.&lt;br /&gt;&lt;br /&gt;4. Player dies when he will try to leave area surrounded by road cones.&lt;br /&gt;&lt;br /&gt;5. Mission ends when:&lt;br /&gt;  - there is no more players&lt;br /&gt;  - there is no more policemen&lt;br /&gt;  - the time is up&lt;br /&gt;&lt;br /&gt;6. Player with best score - wins</Original>
+			<English>&lt;br /&gt;1. There are two teams : policemen (max 2) and players (max 30).&lt;br /&gt;   Players are invisible and hiding in objects.&lt;br /&gt;&lt;br /&gt;2. Policeman's goal is to kill all players. &lt;br /&gt;   Policeman dies when he runs out of ammo.&lt;br /&gt;&lt;br /&gt;3. Player's goal is to collect points by reaching place&lt;br /&gt;   marked by a stack of arrows. Each player has it's own arrows&lt;br /&gt;   and arrows are visible only to him.&lt;br /&gt;&lt;br /&gt;4. Player dies when he will try to leave area surrounded by road cones.&lt;br /&gt;&lt;br /&gt;5. Mission ends when:&lt;br /&gt;  - there is no more players&lt;br /&gt;  - there is no more policemen&lt;br /&gt;  - the time is up&lt;br /&gt;&lt;br /&gt;6. Player with best score - wins</English>
+			<Polish>&lt;br /&gt;1. W grę grają dwa zespoły : policjanci (max 2) i gracze (max 30).&lt;br /&gt;   Gracze są niewidzialni i ukrywają się w przedmiotach.&lt;br /&gt;&lt;br /&gt;2. Zadaniem policjanta jest zastrzelenie wszystkich graczy. &lt;br /&gt;   Policjant umiera gdy skończy mu się amunicja.&lt;br /&gt;&lt;br /&gt;3. Zadaniem gracza jest zbieranie punktów w miejscach oznaczonych&lt;br /&gt;   kolumną utworzoną ze strzałek. Każdy gracz ma własną kolumnę strzałek&lt;br /&gt;   i tylko on widzi własne kolumny strzałek.&lt;br /&gt;&lt;br /&gt;4. Gracz ginie, gdy opuści teren gry otoczony pachołkami drogowymi.&lt;br /&gt;&lt;br /&gt;5. Misja kończy się gdy:&lt;br /&gt;  - nie ma więcej graczy&lt;br /&gt;  - nie ma więcej policjantów&lt;br /&gt;  - upłynie czas gry&lt;br /&gt;&lt;br /&gt;6. Wygrywa gracz z największą ilością punktów</Polish>
+		</Key>
+	</Package>
+	
+	<Package name="HSMissionMessages">
+		<Key ID="STR_HS_MSG_ADD_SCORE">
+			<Original>%1 has %2 points</Original>
+			<English>%1 has %2 points</English>
+			<Polish>%1 ma %2 punktów</Polish>
+		</Key>
+		<Key ID="STR_HS_MSG_PLAYER_LEFT">
+			<Original>Player %1 left the arena</Original>
+			<English>Player %1 left the arena</English>
+			<Polish>Gracz %1 wyszedł ze strefy</Polish>
+		</Key>
+		<Key ID="STR_HS_MSG_PLAYER_DEAD">
+			<Original>%1 died having %2 points</Original>
+			<English>%1 died having %2 points</English>
+			<Polish>%1 zginął mając %2 punktów</Polish>
+		</Key>
+		<Key ID="STR_HS_MSG_POLICEMAN_OUT">
+			<Original>Policeman %1 ran out of ammo</Original>
+			<English>Policeman %1 ran out of ammo</English>
+			<Polish>Policjant %1 nie ma więcej amunicji</Polish>
+		</Key>
+		<Key ID="STR_HS_MSG_TIME_OUT">
+			<Original>Time to mission end: %1 seconds</Original>
+			<English>Time to mission end: %1 seconds</English>
+			<Polish>Czas do zakończenia misji : %1 sekund</Polish>
+		</Key>
+	</Package>
+</Project>

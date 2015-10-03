@@ -24,6 +24,7 @@ for [{_j=0},{_j<_availableMags},{_j=_j+1}] do
 {
 	player addItemToVest _weaponMagazine;
 };
+reload player;
 
 while{true} do
 {
@@ -56,7 +57,7 @@ while{true} do
 		};
 		if ( _ammoCounter == 0 ) then
 		{
-			SendGlobalChat = format ["Policeman %1 ran out of ammo", profileName];
+			SendGlobalChat = format [ localize "STR_HS_MSG_POLICEMAN_OUT", profileName];
 			publicVariable "SendGlobalChat";
 			player globalChat SendGlobalChat;
 			player setDamage 1;

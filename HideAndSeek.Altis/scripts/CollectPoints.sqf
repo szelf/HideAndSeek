@@ -45,7 +45,10 @@ while {true} do
 	// dead player will never collect any points :)
 	if ( not ( player in playableUnits ) ) exitWith
 	{
-		SendGlobalChat = format ["%1 died having %2 points", profileName, score player];
+		{
+			deleteVehicle _x;
+		} forEach _targetArrows;
+		SendGlobalChat = format [ localize "STR_HS_MSG_PLAYER_DEAD", profileName, score player];
 		publicVariable "SendGlobalChat";
 		player globalChat SendGlobalChat;
 	};

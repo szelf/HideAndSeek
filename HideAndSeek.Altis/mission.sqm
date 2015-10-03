@@ -55,7 +55,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			side="WEST";
@@ -69,12 +69,13 @@ class Mission
 					id=0;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="policeman0";
 					init="[this,0] call SDS_fnc_InitPoliceman;";
+					description="Policeman";
 				};
 				class Item1
 				{
@@ -87,6 +88,7 @@ class Mission
 					skill=0.60000002;
 					text="policeman1";
 					init="[this,1] call SDS_fnc_InitPoliceman;";
+					description="Policeman";
 				};
 			};
 		};
@@ -95,7 +97,7 @@ class Mission
 			side="EAST";
 			class Vehicles
 			{
-				items=10;
+				items=30;
 				class Item0
 				{
 					position[]={18412.277,53.061138,15637.278};
@@ -109,6 +111,7 @@ class Mission
 					skill=1;
 					text="player0";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item1
 				{
@@ -121,6 +124,7 @@ class Mission
 					skill=1;
 					text="player5";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item2
 				{
@@ -133,6 +137,7 @@ class Mission
 					skill=1;
 					text="player6";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item3
 				{
@@ -145,6 +150,7 @@ class Mission
 					skill=1;
 					text="player1";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item4
 				{
@@ -157,6 +163,7 @@ class Mission
 					skill=1;
 					text="player7";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item5
 				{
@@ -169,6 +176,7 @@ class Mission
 					skill=1;
 					text="player2";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item6
 				{
@@ -181,6 +189,7 @@ class Mission
 					skill=1;
 					text="player3";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item7
 				{
@@ -193,6 +202,7 @@ class Mission
 					skill=1;
 					text="player4";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item8
 				{
@@ -205,6 +215,7 @@ class Mission
 					skill=1;
 					text="player8";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 				class Item9
 				{
@@ -213,36 +224,29 @@ class Mission
 					id=11;
 					side="EAST";
 					vehicle="O_Soldier_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					skill=1;
 					text="player9";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-			};
-		};
-		class Item2
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=10;
-				class Item0
+				class Item10
 				{
-					position[]={18429.465,53.397373,15637.121};
+					position[]={18422.834,53.191177,15635.16};
 					azimut=83.266098;
 					id=12;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					leader=1;
 					rank="CORPORAL";
 					skill=1;
 					text="player10";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item1
+				class Item11
 				{
-					position[]={18434.777,53.610973,15637.23};
+					position[]={18428.146,53.268845,15635.27};
 					azimut=-98.647598;
 					id=13;
 					side="EAST";
@@ -251,58 +255,63 @@ class Mission
 					skill=1;
 					text="player15";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item2
+				class Item12
 				{
-					position[]={18434.813,53.283485,15632.903};
-					azimut=-89.426598;
-					id=14;
-					side="EAST";
-					vehicle="O_Soldier_F";
-					player="PLAY CDG";
-					skill=1;
-					text="player16";
-					init="[this] call SDS_fnc_InitPlayer;";
-				};
-				class Item3
-				{
-					position[]={18429.313,53.179359,15632.827};
+					position[]={18422.682,53.039433,15630.866};
 					azimut=84.975304;
-					id=15;
+					id=14;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
 					skill=1;
 					text="player11";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item4
+				class Item13
 				{
-					position[]={18434.73,53.07988,15628.809};
-					azimut=-84.747902;
-					id=16;
+					position[]={18428.182,53.113037,15630.942};
+					azimut=-89.426598;
+					id=15;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
 					skill=1;
-					text="player17";
+					text="player16";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item5
+				class Item14
 				{
-					position[]={18429.516,53.087551,15628.719};
+					position[]={18422.885,53.027184,15626.758};
 					azimut=88.7257;
-					id=17;
+					id=16;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
 					skill=1;
 					text="player12";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item6
+				class Item15
 				{
-					position[]={18429.402,53.110447,15623.656};
+					position[]={18428.1,53.094208,15626.848};
+					azimut=-84.747902;
+					id=17;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player17";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item16
+				{
+					position[]={18422.771,53.055157,15621.695};
 					azimut=85.5112;
 					id=18;
 					side="EAST";
@@ -311,34 +320,37 @@ class Mission
 					skill=1;
 					text="player13";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item7
+				class Item17
 				{
-					position[]={18429.303,53.080444,15619.741};
-					azimut=81.897903;
-					id=19;
-					side="EAST";
-					vehicle="O_Soldier_F";
-					player="PLAY CDG";
-					skill=1;
-					text="player14";
-					init="[this] call SDS_fnc_InitPlayer;";
-				};
-				class Item8
-				{
-					position[]={18434.705,53.12175,15623.579};
+					position[]={18428.074,53.100559,15621.618};
 					azimut=-88.253998;
-					id=20;
+					id=19;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
 					skill=1;
 					text="player18";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
-				class Item9
+				class Item18
 				{
-					position[]={18434.854,53.093513,15619.49};
+					position[]={18422.672,52.928406,15617.78};
+					azimut=81.897903;
+					id=20;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player14";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item19
+				{
+					position[]={18428.223,53.046631,15617.529};
 					azimut=-89.785301;
 					id=21;
 					side="EAST";
@@ -347,13 +359,145 @@ class Mission
 					skill=1;
 					text="player19";
 					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item20
+				{
+					position[]={18433.123,53.220364,15632.933};
+					azimut=83.266098;
+					id=22;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=1;
+					text="player20";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item21
+				{
+					position[]={18438.436,53.351692,15633.042};
+					azimut=-98.647598;
+					id=23;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player25";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item22
+				{
+					position[]={18432.971,53.083588,15628.639};
+					azimut=84.975304;
+					id=24;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player21";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item23
+				{
+					position[]={18438.471,53.10894,15628.715};
+					azimut=-89.426598;
+					id=25;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player26";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item24
+				{
+					position[]={18433.174,53.116188,15624.53};
+					azimut=88.7257;
+					id=26;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player22";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item25
+				{
+					position[]={18438.389,53.104,15624.62};
+					azimut=-84.747902;
+					id=27;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player27";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item26
+				{
+					position[]={18433.061,53.08844,15619.468};
+					azimut=85.5112;
+					id=28;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player23";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item27
+				{
+					position[]={18438.363,53.125179,15619.391};
+					azimut=-88.253998;
+					id=29;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player28";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item28
+				{
+					position[]={18432.961,53.039223,15615.553};
+					azimut=81.897903;
+					id=30;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player24";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
+				};
+				class Item29
+				{
+					position[]={18438.512,53.081085,15615.302};
+					azimut=-89.785301;
+					id=31;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=1;
+					text="player29";
+					init="[this] call SDS_fnc_InitPlayer;";
+					description="Player";
 				};
 			};
 		};
 	};
 	class Markers
 	{
-		items=12;
+		items=24;
 		class Item0
 		{
 			position[]={18317.184,47.545879,15495.832};
@@ -422,8 +566,80 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={20899.498,2.3966088,14579.684};
+			position[]={20881.482,2.0608985,14573.036};
 			name="policeSpawn51";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={18202.879,47.515511,15513.752};
+			name="policeSpawn02";
+			type="Empty";
+		};
+		class Item13
+		{
+			position[]={18276.121,47.676998,15561.911};
+			name="policeSpawn03";
+			type="Empty";
+		};
+		class Item14
+		{
+			position[]={20847.014,2.2728932,14664.283};
+			name="policeSpawn52";
+			type="Empty";
+		};
+		class Item15
+		{
+			position[]={20951.484,1.7566479,14528.577};
+			name="policeSpawn53";
+			type="Empty";
+		};
+		class Item16
+		{
+			position[]={21469.213,11.708382,10839.057};
+			name="policeSpawn12";
+			type="Empty";
+		};
+		class Item17
+		{
+			position[]={21537.545,8.6348629,10842.033};
+			name="policeSpawn13";
+			type="Empty";
+		};
+		class Item18
+		{
+			position[]={11724.583,12.575401,13683.476};
+			name="policeSpawn22";
+			type="Empty";
+		};
+		class Item19
+		{
+			position[]={11679.708,13.206273,13720.551};
+			name="policeSpawn23";
+			type="Empty";
+		};
+		class Item20
+		{
+			position[]={3503.3477,12.604168,12600.981};
+			name="policeSpawn42";
+			type="Empty";
+		};
+		class Item21
+		{
+			position[]={3477.9292,7.0230446,12687.938};
+			name="policeSpawn43";
+			type="Empty";
+		};
+		class Item22
+		{
+			position[]={4580.0415,295.71469,21336.652};
+			name="policeSpawn32";
+			type="Empty";
+		};
+		class Item23
+		{
+			position[]={4647.7144,293.07602,21333.883};
+			name="policeSpawn33";
 			type="Empty";
 		};
 	};
@@ -442,7 +658,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena0";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -459,7 +675,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena1";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -476,7 +692,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena2";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -492,7 +708,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena3";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -510,7 +726,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena4";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};
@@ -527,7 +743,7 @@ class Mission
 			age="UNKNOWN";
 			name="arena5";
 			expCond="player in thisList";
-			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [""Player %1 left the arena"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
+			expDesactiv="if( not (player getVariable ""wasKilled"") ) then { nul = [player, nil, true] spawn BIS_fnc_moduleLightning; SendGlobalChat = format [localize ""STR_HS_MSG_PLAYER_LEFT"", profileName]; publicVariable ""SendGlobalChat""; player setDamage 1; };";
 			class Effects
 			{
 			};

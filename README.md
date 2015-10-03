@@ -13,4 +13,5 @@ Game rules:<br>
 5. Mission ends when:
   - there is no more players
   - there is no more policemen
-  - the time is up
+  - the time is up<br>
+6. Player with best score - wins

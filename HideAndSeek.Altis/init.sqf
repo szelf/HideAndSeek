@@ -9,17 +9,15 @@ hsObjectTypes = hsObjectTypes + [["Land_BarrelTrash_F",				5,	[0,0,0],		0,		true
 hsObjectTypes = hsObjectTypes + [["Land_WaterBarrel_F",				5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_MetalBarrel_F",				5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V2_F",			5,	[0,0,0],		180,	true]];
-hsObjectTypes = hsObjectTypes + [["Land_CampingTable_small_F",		5,	[0,0,0],		0,		false]];
+hsObjectTypes = hsObjectTypes + [["Land_CampingTable_small_F",		5,	[0,0,-0.1],		0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V1_F",			5,	[0,0,0],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_GasTank_01_blue_F",			10,	[0,0,-0.5],		0,		true]];
-hsObjectTypes = hsObjectTypes + [["Land_WoodenLog_F",				5,	[0,0,-0.05],	0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_CinderBlocks_F",			5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_FieldToilet_F",				5,	[0,0,-1.59],	180,	false]];
 hsObjectTypes = hsObjectTypes + [["Land_Portable_generator_F",		5,	[0,0,0],		90,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_ToiletBox_F",				5,	[0,0,-1.59],	180,	false]];
 hsObjectTypes = hsObjectTypes + [["Land_WheelCart_F",				5,	[0,0,0],		0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_ChairPlastic_F",			5,	[0,0,0],		90,		true]];
-hsObjectTypes = hsObjectTypes + [["Land_ChairWood_F",				5,	[0,0,0],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_WaterCooler_01_new_F",		5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_WaterCooler_01_old_F",		5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_GarbageBarrel_01_F",		20,	[0,0,0],		90,		true]];
@@ -50,8 +48,8 @@ hsPolicemanWeapon = hsPolicemanWeapon + [[true, 	"arifle_MXC_Black_F",		"30Rnd_6
 hsAvailableArenas		= [arena0,arena1,arena2,arena3,arena4,arena5];
 hsAvailablePoliceSpawn0	= ["policeSpawn00","policeSpawn10","policeSpawn20","policeSpawn30","policeSpawn40","policeSpawn50"];
 hsAvailablePoliceSpawn1	= ["policeSpawn01","policeSpawn11","policeSpawn21","policeSpawn31","policeSpawn41","policeSpawn51"];
-
-diag_log format["Performing init.sqf : %1", count hsObjectTypes];
+hsAvailablePoliceSpawn2	= ["policeSpawn02","policeSpawn12","policeSpawn22","policeSpawn32","policeSpawn42","policeSpawn52"];
+hsAvailablePoliceSpawn3	= ["policeSpawn03","policeSpawn13","policeSpawn23","policeSpawn33","policeSpawn43","policeSpawn53"];
 
 // initializing random table according to weights
 hsObjectTypeRandomTable = [];
@@ -75,7 +73,7 @@ if(isServer) then
 	// choosing an arena the game will be played on
 	hsChoosenArena = "ChoosenArena" call BIS_fnc_getParamValue;
 	hsArena = hsAvailableArenas select hsChoosenArena;
-	hsPoliceSpawn = [ getMarkerPos (hsAvailablePoliceSpawn0 select hsChoosenArena), getMarkerPos (hsAvailablePoliceSpawn1 select hsChoosenArena)] ;
+	hsPoliceSpawn = [ getMarkerPos (hsAvailablePoliceSpawn0 select hsChoosenArena), getMarkerPos (hsAvailablePoliceSpawn1 select hsChoosenArena), getMarkerPos (hsAvailablePoliceSpawn2 select hsChoosenArena), getMarkerPos (hsAvailablePoliceSpawn3 select hsChoosenArena) ] ;
 	hsArenaArea = triggerArea hsArena;
 	
 	publicVariable "hsArena";
@@ -250,7 +248,7 @@ if(!isDedicated) then
 	else // player plays policeman
 	{
 		player setDir random 360;
-		player setPos ( hsPoliceSpawn select ( player getVariable "index" ) );
+		player setPos ( hsPoliceSpawn call BIS_fnc_selectRandom );
 		
 		// exec BLUFOR game logic locally
 		_policemanOutOffAmmoMissionEnds = "PolicemanOutOfAmmo" call BIS_fnc_getParamValue;
