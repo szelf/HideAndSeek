@@ -42,7 +42,7 @@ hsObjectTypes = hsObjectTypes + [["Land_GarbageBin_01_F",			5,	[0,0,-0.2],		180,
 hsPolicemanWeapon = 					[[false,	"hgun_Pistol_heavy_02_F",	"6Rnd_45ACP_Cylinder",		6,	"optic_Yorris"]];
 hsPolicemanWeapon = hsPolicemanWeapon + [[false,	"hgun_Pistol_heavy_01_F",	"11Rnd_45ACP_Mag",			11,	"optic_MRD"]];
 hsPolicemanWeapon = hsPolicemanWeapon + [[true, 	"SMG_02_F",					"30Rnd_9x21_Mag",			30,	"optic_Aco"]];
-hsPolicemanWeapon = hsPolicemanWeapon + [[true, 	"arifle_MXC_Black_F",		"30Rnd_65x39_caseless_mag",	30,	"optic_Hamr"]];
+hsPolicemanWeapon = hsPolicemanWeapon + [[true, 	"srifle_DMR_01_F",		"10Rnd_762x54_Mag",	30,	"optic_Hamr"]];
 
 // arena configuration
 hsAvailableArenas		= [arena0,arena1,arena2,arena3,arena4,arena5];
