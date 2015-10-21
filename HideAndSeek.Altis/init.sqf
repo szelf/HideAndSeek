@@ -36,6 +36,8 @@ hsObjectTypes = hsObjectTypes + [["Land_CanisterPlastic_F",			5,	[0,0,-0.05],	0,
 hsObjectTypes = hsObjectTypes + [["Land_PhoneBooth_01_F",			5,	[0,0,-0.1],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_PhoneBooth_02_F",			5,	[0,0,-0.1],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_GarbageBin_01_F",			5,	[0,0,-0.2],		180,	true]];
+hsObjectTypes = hsObjectTypes + [["Land_Atm_01_F",					5,	[0,0,0],		180,	true]];
+hsObjectTypes = hsObjectTypes + [["Land_Atm_02_F",					5,	[0,0,0],		180,	true]];
 
 // weapons available to a policeman
 // primary weapon, weapon, magazines, rounds in magazine, optional optics
