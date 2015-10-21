@@ -2,6 +2,8 @@
 private["_unit"];
 _unit = _this select 0;
 
+if (!local _unit) exitWith {};
+
 removeAllWeapons _unit;
 removeAllItems _unit;
 removeAllAssignedItems _unit;
