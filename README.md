@@ -14,4 +14,5 @@ Game rules:<br>
   - there is no more players
   - there is no more policemen
   - the time is up<br>
+
 6. Player with best score - wins
