@@ -13,7 +13,6 @@ removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 
-_unit allowDamage false;
 _unit forceAddUniform "U_Marshal";
 _unit addItemToUniform "FirstAidKit";
 _unit addItemToUniform "FirstAidKit";

@@ -8,9 +8,9 @@
 			<Polish>Hide and Seek</Polish>
 		</Key>
 		<Key ID="STR_HS_MAIN_LOADMISSION">
-			<Original>Hide and Seek Minigame v 0.2</Original>
-			<English>Hide and Seek Minigame v 0.2</English>
-			<Polish>Hide and Seek - minigra v 0.2</Polish>
+			<Original>Hide and Seek Minigame v 0.3</Original>
+			<English>Hide and Seek Minigame v 0.3</English>
+			<Polish>Hide and Seek - minigra v 0.3</Polish>
 		</Key>
 	</Package>
 	
@@ -63,7 +63,7 @@
 		<Key ID="STR_HS_PARAM_POLICEMAN_AMMO">
 			<Original>How many shots per player</Original>
 			<English>How many shots per player</English>
-			<Polish>Ile pocisków na jednego gracza</Polish>
+			<Polish>Ilość pocisków na jednego gracza</Polish>
 		</Key>
 		<Key ID="STR_HS_PARAM_POLICEMAN_OPTICS">
 			<Original>Policeman uses optics</Original>
@@ -84,6 +84,16 @@
 			<Original>Unlimited</Original>
 			<English>Unlimited</English>
 			<Polish>Bez limitu czasu</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_CAMPING_LIMIT">
+			<Original>Anti-camping limit</Original>
+			<English>Anti-camping limit</English>
+			<Polish>Limit anty-kamperski</Polish>
+		</Key>
+		<Key ID="STR_HS_PARAM_CAMPING_UNLIMITED">
+			<Original>Off</Original>
+			<English>Off</English>
+			<Polish>Wyłączony</Polish>
 		</Key>
 	</Package>
 	
@@ -169,5 +179,16 @@
 			<English>Time to mission end: %1 seconds</English>
 			<Polish>Czas do zakończenia misji : %1 sekund</Polish>
 		</Key>
+		<Key ID="STR_HS_MSG_STATUS">
+			<Original>Time: %1:%2\nPlayers: %3</Original>
+			<English>Time: %1:%2\nPlayers: %3</English>
+			<Polish>Czas: %1:%2\nGracze: %3</Polish>
+		</Key>
+		<Key ID="STR_HS_MSG_FINISH_INFO">
+			<Original>Game ended after &lt;t color="#ffff00" &gt; %1:%2 &lt;/t&gt; &lt;br /&gt;Alive players: &lt;t color="#ffff00" &gt; %3 &lt;/t&gt; &lt;br /&gt; Alive policemen &lt;t color="#ffff00" &gt; %4 &lt;/t&gt; &lt;br /&gt; Policemen names : &lt;t color="#ffff00" &gt; %5 &lt;/t&gt;&lt;br /&gt; Best players : &lt;t color="#ffff00" &gt; %6 ( %7 points )&lt;/t&gt;</Original>
+			<English>Game ended after &lt;t color="#ffff00" &gt; %1:%2 &lt;/t&gt; &lt;br /&gt;Alive players: &lt;t color="#ffff00" &gt; %3 &lt;/t&gt; &lt;br /&gt; Alive policemen &lt;t color="#ffff00" &gt; %4 &lt;/t&gt; &lt;br /&gt; Policemen names : &lt;t color="#ffff00" &gt; %5 &lt;/t&gt;&lt;br /&gt; Best players : &lt;t color="#ffff00" &gt; %6 ( %7 points )&lt;/t&gt;</English>
+			<Polish>Czas zakończenia gry &lt;t color="#ffff00" &gt; %1:%2 &lt;/t&gt; &lt;br /&gt;Ilość graczy: &lt;t color="#ffff00" &gt; %3 &lt;/t&gt; &lt;br /&gt;Ilość policjantów &lt;t color="#ffff00" &gt; %4 &lt;/t&gt; &lt;br /&gt; Policjanci : &lt;t color="#ffff00" &gt; %5 &lt;/t&gt; &lt;br /&gt; Najlepsi gracze : &lt;t color="#ffff00" &gt; %6 ( %7 punktów )&lt;/t&gt;</Polish>
+		</Key>
 	</Package>
 </Project>
+

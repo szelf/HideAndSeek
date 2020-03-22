@@ -8,8 +8,6 @@ hsObjectTypes = hsObjectTypes + [["Land_BarrelSand_F",				5,	[0,0,0],		0,		true]
 hsObjectTypes = hsObjectTypes + [["Land_BarrelTrash_F",				5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_WaterBarrel_F",				5,	[0,0,0],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_MetalBarrel_F",				5,	[0,0,0],		0,		true]];
-hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V2_F",			5,	[0,0,0],		180,	true]];
-hsObjectTypes = hsObjectTypes + [["Land_CampingTable_small_F",		5,	[0,0,-0.1],		0,		false]];
 hsObjectTypes = hsObjectTypes + [["Land_CampingChair_V1_F",			5,	[0,0,0],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_GasTank_01_blue_F",			10,	[0,0,-0.5],		0,		true]];
 hsObjectTypes = hsObjectTypes + [["Land_CinderBlocks_F",			5,	[0,0,0],		0,		true]];
@@ -38,6 +36,11 @@ hsObjectTypes = hsObjectTypes + [["Land_PhoneBooth_02_F",			5,	[0,0,-0.1],		180,
 hsObjectTypes = hsObjectTypes + [["Land_GarbageBin_01_F",			5,	[0,0,-0.2],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_Atm_01_F",					5,	[0,0,0],		180,	true]];
 hsObjectTypes = hsObjectTypes + [["Land_Atm_02_F",					5,	[0,0,0],		180,	true]];
+hsObjectTypes = hsObjectTypes + [["Land_GarbageContainer_closed_F", 5,	[0,0,0],		0,		true]];
+hsObjectTypes = hsObjectTypes + [["Land_GymRack_03_F",				5,	[0,0,-0.02],	0,		true]];
+hsObjectTypes = hsObjectTypes + [["Land_OfficeChair_01_F",			5,	[0,0,0],		180,	true]];
+hsObjectTypes = hsObjectTypes + [["WaterPump_01_sand_F",			5,	[0,0,0],		0,		true]];
+hsObjectTypes = hsObjectTypes + [["Fridge_01_closed_F",				15,	[0,0,-0.8],		180,	true]];
 
 // weapons available to a policeman
 // primary weapon, weapon, magazines, rounds in magazine, optional optics
@@ -83,12 +86,13 @@ if(isServer) then
 	publicVariable "hsArenaArea";
 	
 	// create border objects
-	private["_arenaX","_arenaY","_arenaPosition","_xyzpos0","_xyzpos1","_xypos0","_xypos1","_ob0","_ob1","_borderDistance"];
+	private["_arenaX","_arenaY","_arenaPosition", "_arenaPositionH", "_xyzpos0","_xyzpos1","_xypos0","_xypos1","_ob0","_ob1","_borderDistance", "_obside", "_cameraTransform"];
 	_arenaX 		= hsArenaArea select 0;
 	_arenaY 		= hsArenaArea select 1;
 	_arenaAngle		= hsArenaArea select 2;
 	_arenaRectangle	= hsArenaArea select 3;
 	_arenaPosition 	= getPos hsArena;
+	_arenaPositionH = getPosASL hsArena vectorAdd [0,0,10];
 	_borderDistance = 5; // distance between road cones at the arena border
 
 	if (_arenaRectangle) then // arena is rectangular
@@ -188,6 +192,10 @@ if(isServer) then
 		_object setDir random 360;
 	};
 	
+	// add location to spectator
+	_cameraTransform = [_arenaPositionH,[0.721323,0.653707,-0.228914],[0.169616,0.153717,0.973452],[47.8152,true]];
+	["AddLocation", ["A", "Arena", "We are playing here", "\A3\Ui_f\data\GUI\Cfg\KeyframeAnimation\IconCurve_CA.paa", _cameraTransform , [47.8152,true]]] call BIS_fnc_EGSpectator;
+	
 	// setting mission time limit
 	hsTimeLimit = "TimeLimit" call BIS_fnc_getParamValue;
 	if( hsTimeLimit>0 ) then
@@ -201,7 +209,6 @@ if(isServer) then
 	[hsTimeLimit] execVM "scripts\ServerMissionConditions.sqf";
 };
 
-
 if(!isDedicated) then
 {
 	waitUntil { !(isNull player) };
@@ -210,12 +217,11 @@ if(!isDedicated) then
 //	diag_log format["Setting variables for player %1",player];
 	player setVariable ["wasKilled",false, true];
 	player addEventHandler ["killed", "player setVariable [""wasKilled"",true, true];"];
-	// if player plays OPFOR
-	if ( side (group player) isEqualTo east ) then
+
+	_obside = side (group player);
+	switch(_obside) do {
+	case east: // player plays OPFOR
 	{
-		player setObjectTextureGlobal [0, "#(argb,8,8,3)color(1,1,1,1)"];
-		player setObjectTextureGlobal [1, "#(argb,8,8,3)color(1,1,1,1)"];
-	
 		_typeIndex			= 0;
 		_typeName			= "";
 		_typeTranslation	= [0,0,0];
@@ -246,8 +252,10 @@ if(!isDedicated) then
 		
 		// exec OPFOR game logic locally
 		[] execVM "scripts\CollectPoints.sqf";
-	}
-	else // player plays policeman
+		// fight against camping players
+		[] execVM "scripts\DefeatCamper.sqf";
+	};
+	case west: // player plays policeman
 	{
 		player setDir random 360;
 		player setPos ( hsPoliceSpawn call BIS_fnc_selectRandom );
@@ -255,5 +263,15 @@ if(!isDedicated) then
 		// exec BLUFOR game logic locally
 		_policemanOutOffAmmoMissionEnds = "PolicemanOutOfAmmo" call BIS_fnc_getParamValue;
 		[ hsPolicemanWeapon, _policemanOutOffAmmoMissionEnds ] execVM "scripts\HuntPlayers.sqf";
+	};
+	default // player plays spectator
+	{
+		private _entities = ["GetTargetEntities"] call BIS_fnc_EGSpectator;
+		if( count _entities > 0) then
+		{
+			_entityIndex = random count _entities;
+			[_entities select _entityIndex] call BIS_fnc_EGSpectatorCameraSetTarget;	
+		};
+	};
 	};
 };

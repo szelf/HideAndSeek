@@ -14,7 +14,7 @@ class Header
 {
 	gameType = TDM;
 	minPlayers = 1;
-	maxPlayers = 32;
+	maxPlayers = 52;
 }; 
 
 // Debug
@@ -33,12 +33,11 @@ enableTeamSwitch = 0;
 saving = 0;
 
 // Respawn
-
-respawn = 1;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
-respawnDelay = 10;
+respawn = 0;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawnDelay = 9999999;
 respawnDialog = 1;
 respawnOnStart = 0;
-respawnTemplates[] = {"Seagull","f_spectator"};
+respawnTemplates[] = {"Seagull","CustomSpectator"};
 
 //------------------------- Debriefing
 debriefing = 1;
@@ -69,7 +68,21 @@ class CfgDebriefing
 	{
 		title = $STR_HS_DEBRIEFING_GAMEOVER;
 		subtitle = $STR_HS_DEBRIEFING_ALLDEAD;
-	};		
+	};
+	class loser
+	{
+		title = $STR_HS_DEBRIEFING_GAMEOVER;
+		subtitle = $STR_HS_DEBRIEFING_ALLDEAD;
+	};
+};
+
+class CfgDebriefingSections
+{
+	class MissionResults
+	{
+		title = "Mission results";
+		variable = "GameFinishInfoStr";
+	};
 };
 
 //---------------------- Show
@@ -78,16 +91,9 @@ showCompass = 1;
 showMap = 1;
 showNotePad = 0;
 
-// Menu components for the Spectator Script
-#include "f\spect\config.hpp"
-
 class CfgFunctions
 {
 	#include "functions\cfgfunctions.hpp"
-	class F
-	{
-		#include "f\spect\functions.hpp"
-	};
 };
 
 class Params
@@ -141,6 +147,13 @@ class Params
 		texts[] = {$STR_HS_PARAM_TIME_UNLIMITED, "5 min", "10 min", "15 min", "20 min", "30 min"};
 		default = 900;
 	};
+	class CampingLimit
+	{
+		title = $STR_HS_PARAM_CAMPING_LIMIT;
+		values[] = {0, 15, 30, 60, 120, 180};
+		texts[] = {$STR_HS_PARAM_CAMPING_UNLIMITED, "15 sec", "30 sec", "1 min", "2 min", "3 min"};
+		default = 60;
+	};
     class f_param_radios
     {
             title = "Radio System";
@@ -152,7 +165,7 @@ class Params
 
 class CfgSounds
 {
-	sounds[] = {PointTaken,PlayerMissed};
+	sounds[] = {PointTaken,PlayerMissed,PlayerCamping};
 	class PointTaken
 	{
 		name = "PointTaken";
@@ -162,7 +175,19 @@ class CfgSounds
 	class PlayerMissed
 	{
 		name = "PlayerMissed";
-		sound[] = {"sounds\lamb.ogg", 1, 1};
+		sound[] = {"sounds\nope.ogg", 1, 1};
+		titles[] = {};
+	};
+	class PlayerWasted
+	{
+		name = "PlayerWasted";
+		sound[] = {"sounds\wasted.ogg", 1, 1};
+		titles[] = {};
+	};
+	class PlayerCamping
+	{
+		name = "PlayerCamping";
+		sound[] = {"sounds\camping.ogg", 1, 1};
 		titles[] = {};
 	};
 };
@@ -174,9 +199,8 @@ class CfgRespawnTemplates
     {
         onPlayerRespawn = "";
     };
-	// F3 Spectator Script
-	class f_Spectator
+	class CustomSpectator
 	{
-		onPlayerRespawn = "f_fnc_CamInit";
+        onPlayerKilled = "SDS_fnc_KilledPlayer";
 	};
 };

@@ -18,9 +18,10 @@ if( isPlayer _player ) then
 	_target setDir _direction;
 	_target setPos _position;
 
+	playSound3D [MISSION_ROOT + "sounds\wasted.ogg", _player];
 	_player setDamage 1;
 }
 else
 {
-	playSound3D [MISSION_ROOT + "sounds\lamb.ogg", _shooter];
+	playSound3D [MISSION_ROOT + "sounds\nope.ogg", _shooter];
 };

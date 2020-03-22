@@ -1,9 +1,25 @@
 // CollectPoints.sqf
-private["_arenaX","_arenaY","_arenaPosition","_targetPos","_targetArrows"];
+private["_arenaX","_arenaY","_arenaPosition","_targetPos","_matcount","_texcount","_j","_targetArrows"];
 _arenaX			= hsArenaArea select 0;// _arenaX = _arenaX * 2;
 _arenaY			= hsArenaArea select 1;// _arenaY = _arenaY * 2;
 _arenaPosition	= getPos hsArena;
 _targetPos		= [0,0,0];
+
+// hide player by changing materials and textures
+_matcount = count getObjectMaterials player;
+_texcount = count getObjectTextures player;
+for [{_j=0},{_j<_matcount},{_j=_j+1}] do
+{
+	player setObjectMaterialGlobal[_j,"\A3\Structures_F\Mil\Shelters\Data\CamoNet_BLUFOR.rvmat"];
+//	{[player,[_j,"\A3\Structures_F\Mil\Shelters\Data\CamoNet_BLUFOR.rvmat"]] remoteExec ["setObjectMaterialGlobal",0,true] };
+};
+for [{_j=0},{_j<_texcount},{_j=_j+1}] do
+{
+	player setObjectTextureGlobal[_j,"#(argb,8,8,3)color(0,0,0,0)"];
+//	{[player,[_j,"#(argb,8,8,3)color(0,0,0,0)"]] remoteExec ["setObjectTextureGlobal",0,true] };
+};
+player allowDamage false;
+
 // create arrows that show target to the player
 _targetArrows = [];
 for "_i" from 0 to 9 do

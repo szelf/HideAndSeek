@@ -2,6 +2,8 @@
 _policemanWeaponTable			= _this select 0;
 _policemanOutOffAmmoMissionEnds	= _this select 1;
 
+setShadowDistance 0;
+
 _weaponIndex	= "PolicemanWeapon" call BIS_fnc_getParamValue;
 _weaponRecord	= _policemanWeaponTable select _weaponIndex;
 player addWeapon (_weaponRecord select 1);
@@ -25,6 +27,7 @@ for [{_j=0},{_j<_availableMags},{_j=_j+1}] do
 	player addItemToVest _weaponMagazine;
 };
 reload player;
+player allowDamage false;
 
 while{true} do
 {

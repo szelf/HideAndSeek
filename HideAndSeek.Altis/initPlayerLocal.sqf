@@ -8,13 +8,24 @@ player enableFatigue false;
 	player globalChat _message;
 };
 
+"GameStatusInfo" addPublicVariableEventHandler
+{
+	_message = _this select 1;
+	hintSilent _message;
+};
+
 "GameOver" addPublicVariableEventHandler
 {
 	_gameOverEnding = AvailableGameEndings select GameOver;
-	if( GameOver>0) then
+	if( GameOver>0 ) then
 	{
 		[_gameOverEnding, true, true] call BIS_fnc_endMission;
 	};
+};
+
+"GameFinishInfo" addPublicVariableEventHandler
+{
+	missionNamespace setVariable ["GameFinishInfoStr", str GameFinishInfo ];
 };
 
 player createDiarySubject ["gameInfo", "HIDE AND SEEK"];
